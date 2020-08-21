@@ -1,0 +1,32 @@
+<h2>My Heroes</h2>
+
+<!--
+	 The classes and functions are defined in the .component.ts file
+	 [class.selected]="hero === selectedHero" means the code will add the selected class should the latter parameters be met.
+	 *ngFor is a for loop. Define variable type, name, and name of data being iterated over.
+	 (click) will run a function (onSelect(hero)) when a list element is clicked/selected.
+ -->
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
+
+<ul class = "heroes">
+	<li *ngFor="let hero of heroes">
+		<a routerLink="/detail/{{hero.id}}">
+			<span class = "badge">{{hero.id}}</span> {{hero.name}}
+		</a>
+		<button class="delete" title="delete hero"
+  			(click)="delete(hero)">x</button>
+	</li>
+</ul>
+
+<!-- Basic workflow of making a new component:
+Write HTML code
+Import needed modules in component.ts file
+Edit CSS -->

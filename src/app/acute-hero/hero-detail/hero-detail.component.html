@@ -1,0 +1,19 @@
+<!-- ngIf is an if clause that checks for a boolean statement
+	 | is a pipeline oprator. It takes the aforementioned data and puts it through
+	 the latter modifier or operation. -->
+<div *ngIf="hero">
+	<h2> {{hero.name | uppercase}} Details</h2>
+	<div><span>id: </span> {{hero.id}} </div>
+	<div>
+		<label>name:
+			<input [(ngModel)] = "hero.name" placeholder="name"/>
+		</label>
+	</div>
+</div>
+<button (click)="goBack()">go back</button>
+<button (click)="save()">save</button>
+
+<!-- Basic workflow of making a new component:
+Write HTML code
+Import needed modules in component.ts file
+Edit CSS -->
